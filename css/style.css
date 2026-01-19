@@ -1,0 +1,78 @@
+:root {
+    --accent: #1e88e5;
+    --accent-yellow: #ffd54f;
+    --bg: #ffffff;
+    --muted: #666;
+}
+
+* { box-sizing: border-box }
+
+html, body { height: 100% }
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    background: linear-gradient(180deg, var(--bg), #f7f9fc);
+    color: #111;
+    min-height: 100%;
+}
+
+header {
+    background: var(--accent);
+    padding:14px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color: #fff;
+}
+
+.brand { font-weight:800 }
+
+nav a { margin-left:10px; text-decoration:none; color:rgba(255,255,255,.95); padding:8px 10px; border-radius:8px }
+nav a.active, nav a:hover { background: var(--accent-yellow); color: #111 }
+
+.container { max-width:1200px; margin:0 auto; padding:24px; height: calc(100% - 72px) }
+.grid { display:grid; grid-template-columns: 1fr 360px; gap:24px; height:100% }
+
+.card { background: #fff; padding:18px; border-radius:14px; box-shadow: 0 8px 30px rgba(16,24,40,.08) }
+.item { display:flex; justify-content:space-between; border-bottom:1px dashed #eee; padding:12px 0 }
+.btn { background: var(--accent); color:#fff; padding:10px 14px; border-radius:10px; border:0; cursor:pointer; font-weight:600; transition: background .18s ease, color .18s ease }
+.btn:hover { background: var(--accent-yellow); color: #111 }
+.btn.alt { background: var(--accent-yellow); color:#111 }
+.gray { background:#f3f4f6; color:#111 }
+.muted { color:var(--muted) }
+.small { font-size:13px }
+
+/* Homepage claim buttons should be gold */
+#home .item .btn { background: var(--accent-yellow); color: #111 }
+#home .item .btn:hover { background: #f3c94a }
+
+footer { text-align:center; padding:18px; color:var(--muted) }
+
+/* Responsive / Mobile tweaks */
+@media (max-width:980px){
+    .grid{grid-template-columns:1fr}
+    .container{padding:12px; height:auto}
+}
+
+@media (max-width:760px){
+    header{flex-direction:column; align-items:flex-start; gap:12px; padding:12px}
+    nav{width:100%}
+    nav a{display:inline-block; margin:6px 6px 0 0; padding:10px 12px}
+    .grid{grid-template-columns:1fr; gap:12px}
+    .card{padding:14px}
+    .item{padding:10px 0}
+    .btn{padding:12px 14px}
+    .btn, .gray, .btn.alt{min-height:44px}
+    aside .btn{width:100%; display:block}
+    form label{font-size:14px}
+    input,select,textarea{font-size:16px; padding:10px}
+}
+
+@media (max-width:420px){
+    header{padding:10px}
+    .brand{font-size:18px}
+    nav a{padding:10px; width:100%; box-sizing:border-box}
+    .card{border-radius:10px}
+    .btn{font-size:15px}
+}
