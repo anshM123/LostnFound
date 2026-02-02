@@ -1,6 +1,3 @@
-// ---------------------------
-// Data & persistence
-// ---------------------------
 
 // Initial sample items if none in storage
 let items = JSON.parse(localStorage.getItem("items")) || [
